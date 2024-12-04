@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,9 +11,15 @@ public class PlayerController : MonoBehaviour
     public InputAction attack;
     public Rigidbody2D rg;
 
-    public float speed = 7f;
-    public bool onGround = true;
-    [SerializeField] public float jumpHeight = 2f;
+    public float speed;
+    public bool onGround;
+    [SerializeField] public float jumpHeight;
+    private void Awake()
+    {
+        jumpHeight = 22f;
+        onGround = true;
+        speed = 9f;
+    }
     private void OnEnable()
     {
         playerMovement.Enable();
@@ -41,29 +48,35 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rg.velocity = new Vector2(playerMovement.ReadValue<Vector2>().x * speed, rg.velocity.y);
+        if(onGround)
+        {
+           rg.velocity = new Vector2(playerMovement.ReadValue<Vector2>().x * speed, rg.velocity.y);
+
+        }
+        else
+        {
+            
+        }
+        
+      
     }
     void jump(InputAction.CallbackContext context)
     {
+        Debug.Log("Jump action performed");
         if (onGround)
         {
+            Debug.Log("Jumping");
             rg.velocity = new Vector2(rg.velocity.x, jumpHeight);
-            onGround = false;
+         
+
         }
     }
     void cancelJump(InputAction.CallbackContext context)
     {
+        Debug.Log("Jump action canceled");
         if (rg.velocity.y > 0)
         {
             rg.velocity = new Vector2(rg.velocity.x, 0);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            onGround = true;
         }
     }
 

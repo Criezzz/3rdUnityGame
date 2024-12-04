@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4597398725237029544}
   - component: {fileID: 8198301389272710000}
-  - component: {fileID: 7662047653185534376}
   - component: {fileID: 5291319561574018344}
   m_Layer: 0
   m_Name: flying_platform
@@ -86,33 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &7662047653185534376
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380030463851210853}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.6512809
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &5291319561574018344
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0020224452, y: -0.0606755}
+  m_Offset: {x: 0.0073797107, y: -0.15462229}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -156,5 +128,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6561719, y: 0.39324474}
+  m_Size: {x: 1.6292771, y: 0.56335324}
   m_EdgeRadius: 0
