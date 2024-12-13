@@ -17,6 +17,6 @@ public class Body : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-         player.rg.velocity = new Vector2(0, player.rg.velocity.y);
+         player.rg.linearVelocity = new Vector2(0, player.rg.linearVelocity.y);
     }
 }

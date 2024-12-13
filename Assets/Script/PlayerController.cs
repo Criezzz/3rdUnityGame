@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if(onGround)
         {
-           rg.velocity = new Vector2(playerMovement.ReadValue<Vector2>().x * speed, rg.velocity.y);
+           rg.linearVelocity = new Vector2(playerMovement.ReadValue<Vector2>().x * speed, rg.linearVelocity.y);
 
         }
         else
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         if (onGround)
         {
             Debug.Log("Jumping");
-            rg.velocity = new Vector2(rg.velocity.x, jumpHeight);
+            rg.linearVelocity = new Vector2(rg.linearVelocity.x, jumpHeight);
          
 
         }
@@ -74,9 +74,9 @@ public class PlayerController : MonoBehaviour
     void cancelJump(InputAction.CallbackContext context)
     {
         Debug.Log("Jump action canceled");
-        if (rg.velocity.y > 0)
+        if (rg.linearVelocity.y > 0)
         {
-            rg.velocity = new Vector2(rg.velocity.x, 0);
+            rg.linearVelocity = new Vector2(rg.linearVelocity.x, 0);
         }
     }
 
