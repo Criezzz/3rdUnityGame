@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     public bool onGround;
+    public bool stunned;
     [SerializeField] public float jumpHeight;
     private void Awake()
     {
