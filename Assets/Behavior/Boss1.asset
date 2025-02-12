@@ -47,16 +47,16 @@ MonoBehaviour:
   m_Name: Boss1
   m_EditorClassIdentifier: 
   Graphs:
-  - rid: 5297635349984968789
+  - rid: 4155971714186478045
   RootGraph:
-    rid: 5297635349984968789
+    rid: 4155971714186478045
   m_DebugInfo: {fileID: 7128952410260616235}
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 5297635349984968789
+    - rid: 4155971714186478045
       type: {class: BehaviorGraphModule, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         AuthoringAssetID:
@@ -64,36 +64,36 @@ MonoBehaviour:
           m_Value1: 5271253807981660120
         m_DebugInfo: {fileID: 0}
         Root:
-          rid: 5297635349984968790
+          rid: 4155971714186478046
         BlackboardReference:
-          rid: 5297635349984968791
+          rid: 4155971714186478047
         BlackboardGroupReferences: []
         m_VersionTimestamp: 638690037178487868
-    - rid: 5297635349984968790
+    - rid: 4155971714186478046
       type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         ID:
           m_Value0: 17401918356913820703
           m_Value1: 2210216543933740305
         Graph:
-          rid: 5297635349984968789
+          rid: 4155971714186478045
         m_Parent:
           rid: -2
         m_Child:
           rid: -2
         Repeat: 1
-    - rid: 5297635349984968791
+    - rid: 4155971714186478047
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Blackboard:
-          rid: 5297635349984968792
+          rid: 4155971714186478048
         m_Source: {fileID: 8486159480837271220}
-    - rid: 5297635349984968792
+    - rid: 4155971714186478048
       type: {class: Blackboard, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Variables:
-        - rid: 5297635349984968793
-    - rid: 5297635349984968793
+        - rid: 4155971714186478049
+    - rid: 4155971714186478049
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:

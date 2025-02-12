@@ -12,22 +12,32 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rg;
 
     public float speed;
+    public float fallSpeed;
     public bool onGround;
+    public bool moving;
+    public bool lookingRight;
+    public bool lookingLeft;
     public bool stunned;
     [SerializeField] public float jumpHeight;
+    //[SerializeField] public float jumpSpeed;
     private void Awake()
     {
-        jumpHeight = 22f;
+        jumpHeight = 23f;
         onGround = true;
+        moving = false;
+        lookingRight = true;
+        lookingLeft = false;
+        stunned = false;
+        fallSpeed = 8f;
         speed = 9f;
     }
     private void OnEnable()
     {
         playerMovement.Enable();
-        playerJump.Enable();
         attack.Enable();
         playerJump.performed += jump;
         playerJump.canceled += cancelJump;
+        playerJump.Enable();
     }
     private void OnDisable()
     {
@@ -49,17 +59,36 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(onGround)
+        int direction = playerMovement.ReadValue<Vector2>().x > 0 ? 1 : playerMovement.ReadValue<Vector2>().x < 0 ? -1 : 0;
+        if (direction != 0)
         {
-           rg.linearVelocity = new Vector2(playerMovement.ReadValue<Vector2>().x * speed, rg.linearVelocity.y);
-
+            moving = true;
+            if (direction == 1)
+            {
+                lookingRight = true;
+                lookingLeft = false;
+            }
+            else
+            {
+                lookingRight = false;
+                lookingLeft = true;
+            }
         }
         else
         {
-            
+            moving = false;
         }
+        rg.linearVelocity = new Vector2(playerMovement.ReadValue<Vector2>().x * speed, rg.linearVelocity.y);
+
         
-      
+       
+        //slow down the jump
+        if (rg.linearVelocity.y < -Mathf.Abs(fallSpeed))
+        {
+            rg.linearVelocity = new Vector2(rg.linearVelocity.x, Mathf.Clamp(rg.linearVelocity.y, -Mathf.Abs(fallSpeed), Mathf.Infinity));
+                
+        }
+          
     }
     void jump(InputAction.CallbackContext context)
     {
@@ -68,6 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Jumping");
             rg.linearVelocity = new Vector2(rg.linearVelocity.x, jumpHeight);
+
          
 
         }
@@ -78,6 +108,7 @@ public class PlayerController : MonoBehaviour
         if (rg.linearVelocity.y > 0)
         {
             rg.linearVelocity = new Vector2(rg.linearVelocity.x, 0);
+
         }
     }
 

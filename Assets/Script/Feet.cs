@@ -19,7 +19,12 @@ public class Feet : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Ground"))
         {
-            player.onGround = true;
+            Vector3 normal = collision.GetContact(0).normal;
+
+            if (normal == Vector3.up)
+            {
+                player.onGround = true;
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
