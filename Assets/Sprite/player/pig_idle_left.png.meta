@@ -1,37 +1,22 @@
 fileFormatVersion: 2
-guid: 08dced651e5284548b94e13ce2b4ac0e
+guid: 838c5c2dde9e2d6439ab242658337a47
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4510956300453627805
-    second: slimeKingJumpAbove_0
+      213: 4811950972333489653
+    second: pig_idle_left_0
   - first:
-      213: 2557095028216949277
-    second: slimeKingJumpAbove_1
+      213: 4463405866846549111
+    second: pig_idle_left_1
   - first:
-      213: 4698591984061820681
-    second: slimeKingJumpAbove_2
+      213: 4899646582824744358
+    second: pig_idle_left_2
   - first:
-      213: 6865825874115618302
-    second: slimeKingJumpAbove_3
+      213: 6758165623473724993
+    second: pig_idle_left_3
   - first:
-      213: -323909119982598127
-    second: slimeKingJumpAbove_4
-  - first:
-      213: -8101697918820405626
-    second: slimeKingJumpAbove_5
-  - first:
-      213: 4069242378058598136
-    second: slimeKingJumpAbove_6
-  - first:
-      213: 2224699982871418769
-    second: slimeKingJumpAbove_7
-  - first:
-      213: -8675629922914645339
-    second: slimeKingJumpAbove_8
-  - first:
-      213: 6793033606803176988
-    second: slimeKingJumpAbove_9
+      213: 832095158418449507
+    second: pig_idle_left_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -166,221 +151,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slimeKingJumpAbove_0
+      name: pig_idle_left_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 139
-        height: 103
+        width: 25
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 368b622152dd561c0800000000000000
-      internalID: -4510956300453627805
+      spriteID: 5fd788e1aeb77c240800000000000000
+      internalID: 4811950972333489653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeKingJumpAbove_1
+      name: pig_idle_left_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 1
-        width: 140
-        height: 102
+        x: 31
+        y: 0
+        width: 26
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1ae9cd4160ac7320800000000000000
-      internalID: 2557095028216949277
+      spriteID: 77478cddcf331fd30800000000000000
+      internalID: 4463405866846549111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeKingJumpAbove_2
+      name: pig_idle_left_2
       rect:
         serializedVersion: 2
-        x: 279
+        x: 57
         y: 0
-        width: 140
-        height: 103
+        width: 29
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90fa08ae380c43140800000000000000
-      internalID: 4698591984061820681
+      spriteID: 6a5b93e8b9a0ff340800000000000000
+      internalID: 4899646582824744358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeKingJumpAbove_3
+      name: pig_idle_left_3
       rect:
         serializedVersion: 2
-        x: 419
+        x: 86
         y: 0
-        width: 140
-        height: 103
+        width: 29
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef5e85c7140584f50800000000000000
-      internalID: 6865825874115618302
+      spriteID: 14e586804d3d9cd50800000000000000
+      internalID: 6758165623473724993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeKingJumpAbove_4
+      name: pig_idle_left_4
       rect:
         serializedVersion: 2
-        x: 564
+        x: 118
         y: 0
-        width: 126
-        height: 103
+        width: 25
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1188deb1f5e318bf0800000000000000
-      internalID: -323909119982598127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slimeKingJumpAbove_5
-      rect:
-        serializedVersion: 2
-        x: 705
-        y: 0
-        width: 124
-        height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68e203fdaacf09f80800000000000000
-      internalID: -8101697918820405626
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slimeKingJumpAbove_6
-      rect:
-        serializedVersion: 2
-        x: 852
-        y: 0
-        width: 116
-        height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f60621126ad87830800000000000000
-      internalID: 4069242378058598136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slimeKingJumpAbove_7
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 0
-        width: 140
-        height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1975ed2f8d8bfde10800000000000000
-      internalID: 2224699982871418769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slimeKingJumpAbove_8
-      rect:
-        serializedVersion: 2
-        x: 1119
-        y: 0
-        width: 140
-        height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5aa4ce1fc88f99780800000000000000
-      internalID: -8675629922914645339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slimeKingJumpAbove_9
-      rect:
-        serializedVersion: 2
-        x: 1259
-        y: 0
-        width: 139
-        height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1e3bc80314b54e50800000000000000
-      internalID: 6793033606803176988
+      spriteID: 364aad053223c8b00800000000000000
+      internalID: 832095158418449507
       vertices: []
       indices: 
       edges: []
@@ -389,7 +264,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 50d7d0bca0f4bf24eb40fdf5c01cb776
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -399,16 +274,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      slimeKingJumpAbove_0: -4510956300453627805
-      slimeKingJumpAbove_1: 2557095028216949277
-      slimeKingJumpAbove_2: 4698591984061820681
-      slimeKingJumpAbove_3: 6865825874115618302
-      slimeKingJumpAbove_4: -323909119982598127
-      slimeKingJumpAbove_5: -8101697918820405626
-      slimeKingJumpAbove_6: 4069242378058598136
-      slimeKingJumpAbove_7: 2224699982871418769
-      slimeKingJumpAbove_8: -8675629922914645339
-      slimeKingJumpAbove_9: 6793033606803176988
+      pig_idle_left_0: 4811950972333489653
+      pig_idle_left_1: 4463405866846549111
+      pig_idle_left_2: 4899646582824744358
+      pig_idle_left_3: 6758165623473724993
+      pig_idle_left_4: 832095158418449507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

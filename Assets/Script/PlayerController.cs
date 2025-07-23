@@ -10,13 +10,15 @@ public class PlayerController : MonoBehaviour
     public InputAction playerJump;
     public InputAction attack;
     public Rigidbody2D rg;
-
+    public Animator animator;
     public float speed;
     public float fallSpeed;
     public bool onGround;
     public bool moving;
     public bool lookingRight;
     public bool lookingLeft;
+    public AnimatorOverrideController rightController;
+    public AnimatorOverrideController leftController;
     public bool stunned;
     [SerializeField] public float jumpHeight;
     //[SerializeField] public float jumpSpeed;
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-      
+      animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -59,6 +61,12 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (lookingRight) {
+            animator.runtimeAnimatorController = rightController;
+        }
+        else {
+            animator.runtimeAnimatorController = leftController;
+        }
         int direction = playerMovement.ReadValue<Vector2>().x > 0 ? 1 : playerMovement.ReadValue<Vector2>().x < 0 ? -1 : 0;
         if (direction != 0)
         {
