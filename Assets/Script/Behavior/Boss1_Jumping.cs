@@ -3,35 +3,40 @@ using UnityEngine;
 
 public class Boss1_Jumping : StateMachineBehaviour
 {
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    public float jumpHeight = 2f; // How high the boss jumps
+    public float jumpDuration = 0.5f; // How long the jump lasts
+
+    private Vector3 startPos;
+    private float timer;
+    public GameManager gameManager;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-      Rigidbody2D rb = animator.GetComponent<Rigidbody2D>();
-      rb.linearVelocity = new Vector2(rb.linearVelocity.x, 80);
-      animator.SetBool("isIdle", true);
-      
+        startPos = animator.transform.position;
+        timer = 0f;
+        gameManager = GameManager.Instance;
+        animator.SetBool("isIdle", true);
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        timer += Time.deltaTime;
+        float normalizedTime = Mathf.Clamp01(timer / jumpDuration);
+        // Parabolic jump: up then down
+        float yOffset = 4 * jumpHeight * normalizedTime * (1 - normalizedTime);
+        animator.transform.position = startPos + new Vector3(0, yOffset, 0);
+    }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       animator.ResetTrigger("bossJump");
+        animator.transform.position = startPos;
+        animator.ResetTrigger("bossJump");
+        if (Random.value < 0.5f)
+        {
+            gameManager.SpawnGroundSlime();
+        }
+        else
+        {
+            gameManager.SpawnFlyingSlime();
+        }
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

@@ -235,8 +235,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.16484147
+  m_UseAutoMass: 0
+  m_Mass: 99999
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 8
@@ -290,3 +290,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 6154390185476399357}
+  rb: {fileID: 0}

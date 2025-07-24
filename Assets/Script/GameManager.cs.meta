@@ -3,7 +3,9 @@ guid: acca472e47d91c348b70a3c3ac51f76f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - groundSlimePrefab: {fileID: 2510063360940554047, guid: 6a87fb50e63a16b46af708092fa55691, type: 3}
+  - flyingSlimePrefab: {fileID: 5944678282396842257, guid: 0c0325b397ee6a54da360e50788d78e6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
