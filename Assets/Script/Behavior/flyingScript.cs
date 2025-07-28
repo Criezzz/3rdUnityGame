@@ -1,27 +1,18 @@
 using UnityEngine;
+using Pathfinding;
 
 public class flyingScript : MonoBehaviour
 {
-    public float moveSpeed = 2f;
-    private Vector3 targetPosition;
-    private bool movingToTarget = true;
-
-    void Start()
+    public GameObject player;
+    void Start() 
     {
-        Vector3 startPos = transform.position;
-        targetPosition = new Vector3(startPos.x, 4f, startPos.z);
+        player = GameObject.Find("player");
+
+        gameObject.GetComponent<AIDestinationSetter>().target = player.transform;
     }
 
     void Update()
     {
-        if (movingToTarget)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
-            {
-                transform.position = targetPosition; 
-                movingToTarget = false; 
-        }
-    }
+    
     }
 }
