@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 8898717308561600239}
   - component: {fileID: 304273839436555065}
   - component: {fileID: 8438825501706415052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlyingSlime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
