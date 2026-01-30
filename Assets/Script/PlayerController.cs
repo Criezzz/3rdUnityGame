@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public InputAction playerMovement;
     public InputAction playerJump;
-    public InputAction attack;
+    public InputAction attack = new InputAction(binding: "<Keyboard>/space");
     public Rigidbody2D rg;
     public Animator animator;
     public float speed;

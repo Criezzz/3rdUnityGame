@@ -10,11 +10,7 @@ public class BossHealth : MonoBehaviour
     public float currentHealth;
 
     [Header("UI References")]
-    public Slider healthSlider;
-    public Image fillImage;
-    public Color fullHealthColor = Color.green;
-    public Color lowHealthColor = Color.red;
-    public float lowHealthThreshold = 0.3f;
+    public RectTransform healthBarFill;  // Drag BossHP_Fill here
 
     [Header("Damage Feedback")]
     public float flashDuration = 0.1f;
@@ -24,22 +20,28 @@ public class BossHealth : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent onDeath;
-    public UnityEvent<float> onHealthChanged; // Passes health percentage
+    public UnityEvent<float> onHealthChanged;
 
     [Header("Victory")]
     public GameObject victoryPanel;
 
     private bool isDead = false;
 
-    void Start()
+    void Awake()
     {
-        currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
         if (spriteRenderer != null)
         {
             originalColor = spriteRenderer.color;
         }
+    }
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+
+        // Health bar starts at full
+        UpdateHealthUI();
 
         UpdateHealthUI();
 
@@ -73,28 +75,11 @@ public class BossHealth : MonoBehaviour
 
     private void UpdateHealthUI()
     {
-        float healthPercent = currentHealth / maxHealth;
-
-        if (healthSlider != null)
+        if (healthBarFill != null)
         {
-            healthSlider.value = healthPercent;
-        }
-
-        if (fillImage != null)
-        {
-            // Scale the fill bar based on health
-            fillImage.fillAmount = healthPercent;
-            
-            // Change color based on health
-            if (healthPercent <= lowHealthThreshold)
-            {
-                fillImage.color = lowHealthColor;
-            }
-            else
-            {
-                fillImage.color = Color.Lerp(lowHealthColor, fullHealthColor, 
-                    (healthPercent - lowHealthThreshold) / (1f - lowHealthThreshold));
-            }
+            // Scale the health bar width based on health percentage
+            float healthPercent = currentHealth / maxHealth;
+            healthBarFill.localScale = new Vector3(healthPercent, 1f, 1f);
         }
     }
 

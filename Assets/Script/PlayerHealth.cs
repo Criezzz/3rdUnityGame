@@ -15,19 +15,37 @@ public class PlayerHealth : MonoBehaviour
     public Sprite emptyHeart;
 
     [Header("Game Over")]
-    public GameObject gameOverPanel;
+    public GameOverUI gameOverUI;
     public float gameOverDelay = 1f;
 
     private bool isDead = false;
+    public bool IsDead => isDead;
 
     void Start()
     {
         currentHealth = maxHealth;
         UpdateHeartsUI();
         
-        if (gameOverPanel != null)
+        // Auto-find GameOverUI if not assigned
+        if (gameOverUI == null)
         {
-            gameOverPanel.SetActive(false);
+            // Try to find in scene (including inactive objects)
+            GameOverUI[] allGameOverUIs = FindObjectsByType<GameOverUI>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            if (allGameOverUIs.Length > 0)
+            {
+                gameOverUI = allGameOverUIs[0];
+                Debug.Log($"PlayerHealth: Found GameOverUI on {gameOverUI.gameObject.name}");
+            }
+        }
+        
+        if (gameOverUI != null)
+        {
+            gameOverUI.gameObject.SetActive(false);
+            Debug.Log("PlayerHealth: GameOverUI initialized and hidden");
+        }
+        else
+        {
+            Debug.LogWarning("PlayerHealth: GameOverUI not found! Game Over screen won't show.");
         }
     }
 
@@ -99,10 +117,16 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(gameOverDelay);
 
-        if (gameOverPanel != null)
+        if (gameOverUI != null)
         {
-            gameOverPanel.SetActive(true);
-            Time.timeScale = 0f; // Pause game
+            Debug.Log("Showing Game Over UI");
+            gameOverUI.Show();
+        }
+        else
+        {
+            Debug.LogError("GameOverUI is null! Cannot show game over screen.");
+            // Fallback: just pause the game
+            Time.timeScale = 0f;
         }
     }
 
